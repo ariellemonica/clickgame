@@ -1,8 +1,8 @@
-import React from "react";
-import dataCards from "./CardArray.json";
+import React, { Component } from "react";
+import dataCards from '../CardArray.json';
 import Card from "./Card"
 
-class Game extends React.Component{
+class Game extends Component{
     state = {
         cards: dataCards,
         score: 0,
@@ -46,7 +46,13 @@ class Game extends React.Component{
     render(){
         return (<div>
             <h1>Game Component</h1>
-            <Card />
+            {this.state.cards.map(card => (
+                <Card 
+                    id={card.id}
+                    key={card.id}
+                    image={card.image}
+                />
+            ))}
             {/* {this.state.cards.map((card,key) => (
                 <Card 
                 card = {card}
