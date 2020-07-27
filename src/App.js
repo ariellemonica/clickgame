@@ -75,9 +75,11 @@ class App extends Component {
       cards[i].clickedNum = 0;
     }
 
+    var cardsShuff = this.shuffleData(cards);
+
     this.setState(
       {
-        cards: cards,
+        cards: cardsShuff,
         score: 0,
         winStatus: ""
       }
