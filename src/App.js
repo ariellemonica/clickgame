@@ -68,13 +68,21 @@ class App extends Component {
   }
 
   handleClickReset = () => {
+
+    var cards = this.state.cards
+    for (let i = 0; i < cards.length; i++) {
+      cards[i].click = false;
+      cards[i].clickedNum = 0;
+    }
+
     this.setState(
       {
-        cards: cardsData,
+        cards: cards,
         score: 0,
         winStatus: ""
       }
     )
+
   }
 
 
