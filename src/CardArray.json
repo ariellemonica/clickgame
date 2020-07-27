@@ -3,71 +3,83 @@
         "id": 1,
         "name": "Bulbasaur",
         "image": "https://cdn.bulbagarden.net/upload/thumb/2/21/001Bulbasaur.png/500px-001Bulbasaur.png",
+        "clickedNum": 0,
         "click": false
     },
     {
         "id": 2,
         "name": "Charmander",
+        "clickedNum": 0,
         "image": "https://cdn.bulbagarden.net/upload/thumb/7/73/004Charmander.png/500px-004Charmander.png",
         "click": false
     },
     {
         "id": 3,
         "name": "Squirtle",
+        "clickedNum": 0,
         "image": "https://cdn.bulbagarden.net/upload/thumb/3/39/007Squirtle.png/500px-007Squirtle.png",
         "click": false
     },
     {
         "id": 4,
         "name": "Pikachu",
+        "clickedNum": 0,
         "image": "https://cdn.bulbagarden.net/upload/thumb/0/0d/025Pikachu.png/500px-025Pikachu.png",
         "click": false
     },
     {
         "id": 5,
         "name": "Vulpix",
+        "clickedNum": 0,
         "image": "https://cdn.bulbagarden.net/upload/thumb/6/60/037Vulpix.png/500px-037Vulpix.png",
         "click": false
     },
     {
         "id": 6,
         "name": "Growlithe",
+        "clickedNum": 0,
         "image": "https://cdn.bulbagarden.net/upload/thumb/3/3d/058Growlithe.png/500px-058Growlithe.png",
         "click": false
     },
     {
         "id": 7,
         "name": "Eevee",
+        "clickedNum": 0,
         "image": "https://cdn.bulbagarden.net/upload/thumb/e/e2/133Eevee.png/500px-133Eevee.png",
         "click": false
     },
     {
         "id": 8,
         "name": "Seel",
+        "clickedNum": 0,
         "image": "https://cdn.bulbagarden.net/upload/thumb/1/1f/086Seel.png/500px-086Seel.png",
         "click": false
     },
     {
         "id": 9,
         "name": "Dratini",
+        "clickedNum": 0,
         "image": "https://cdn.bulbagarden.net/upload/thumb/c/cc/147Dratini.png/500px-147Dratini.png",
         "click": false
     },
     {
         "id": 10,
         "name": "Cubone",
+        "clickedNum": 0,
         "image": "https://cdn.bulbagarden.net/upload/thumb/2/2a/104Cubone.png/500px-104Cubone.png",
         "click": false
     },
     {
         "id": 11,
         "name": "Lapras",
+        "clickedNum": 0,
         "image": "https://cdn.bulbagarden.net/upload/thumb/a/ab/131Lapras.png/500px-131Lapras.png",
         "click": false
     },
     {
         "id": 12,
         "name": "Ponyta",
+        "clickedNum": 0,
         "image": "https://cdn.bulbagarden.net/upload/thumb/3/3b/077Ponyta.png/500px-077Ponyta.png",
         "click": false
     }

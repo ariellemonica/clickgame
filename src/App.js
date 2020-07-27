@@ -3,9 +3,6 @@ import React, { Component } from 'react';
 import './App.css';
 // import Navbar from './components/Navbar';
 import Header from './components/Header';
-import Footer from './components/Footer';
-// import Game from './components/Game';
-// import Winner from './components/Winner'
 import GameWrapper from './components/GameWrapper';
 import cardsData from '../src/CardArray.json';
 import Card from './components/Card';
@@ -26,28 +23,25 @@ class App extends Component {
       if (cards[i].id === id) {
         if (cards[i].click === false) {
           cards[i].click = true;
+          cards[i].clickedNum++;
           score++;
-          // topScore++;
           var cardsShuff = this.shuffleData(cards);
+          this.setState({ cards: cardsShuff, score: score })
+          this.checkScore(score)
+        } else if (cards[i].click === true) {
+          cards[i].clickedNum++;
         }
-        // else {
-        //   topScore = this.state.topScore
-        //   score = 0;
-        //   cardsShuff = this.shuffleData(cardsData)
-        // }
-        // else {
-        //   topScore = this.state.topScore
-        //   if (score > topScore) {
-        //     this.setState({ topScore: score, score: 0, cards: cards })
-        //     //if return doesn't work ... we need to stop the for loop some other way
-        //     //if this doesn't work, change the for loop to for while
-        //     return
-        //   }
-        // }
       }
     }
-    this.setState({ cards: cardsShuff, score: score })
-
+    // this.setState({ cards: cardsShuff, score: score })
+    // this.checkScore(score)
+    for (let i = 0; i < cards.length; i++) {
+      if (cards[i].id === id) {
+        if (cards[i].clickedNum > 2){
+          this.gameLost();
+        }
+      }
+    }
   }
 
   shuffleData = data => {
@@ -68,13 +62,29 @@ class App extends Component {
     }
   }
 
+  gameLost = () => {
+    // set winStatus to some sort of try again message
+    this.setState({ score: 0, winStatus: "You chose that Pokemon already, start again from Pallet Town!"})
+  }
+
+  handleClickReset = () => {
+    this.setState(
+      {
+        cards: cardsData,
+        score: 0,
+        winStatus: ""
+      }
+    )
+  }
+
 
   render() {
     return (
       <>
-        {/* <Navbar /> */}
         <Header />
         <p>Current Score: {this.state.score}</p>
+        <p>{this.state.winStatus}</p>
+        <button onClick={this.handleClickReset}>Reset Game</button>
         <GameWrapper>
           {this.state.cards.map(card => (
             <Card
@@ -82,11 +92,11 @@ class App extends Component {
               key={card.id}
               image={card.image}
               name={card.name}
+              clickedNum={card.clickedNum}
               handleClick={this.handleClick}
             />
           ))}
         </GameWrapper>
-        <Footer />
       </>
     );
   }
