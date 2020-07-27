@@ -1,9 +1,18 @@
 import React from "react";
 
-function Footer (){
+function Footer() {
     return (
         <div>
-            This is the footer!
+            <footer>
+                <ul>
+                    <li>
+                        Your Current Score: 
+                    </li>
+                    <li>
+                        Top Score:
+                    </li>
+                </ul>
+            </footer>
         </div>
     )
 }

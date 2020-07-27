@@ -1,31 +1,40 @@
 // import React from 'react';
 import React, { Component } from 'react';
 import './App.css';
-// import Header from './components/Header';
-// import Footer from './components/Footer';
+// import Navbar from './components/Navbar';
+import Header from './components/Header';
+import Footer from './components/Footer';
 // import Game from './components/Game';
+// import Winner from './components/Winner'
 import GameWrapper from './components/GameWrapper';
-import cards from '../src/CardArray.json';
+import cardsData from '../src/CardArray.json';
 import Card from './components/Card';
 
 class App extends Component {
   state = {
-    cards: cards,
+    cards: cardsData,
     score: 0,
-    topScore: 0
+    winStatus: ""
+    // topScore: 0
   };
 
   handleClick = (id) => {
     var cards = this.state.cards
     var score = this.state.score
-    var topScore = this.state.topScore
+    // var topScore = this.state.topScore
     for (let i = 0; i < cards.length; i++) {
       if (cards[i].id === id) {
         if (cards[i].click === false) {
-          cards[i].click= true;
+          cards[i].click = true;
           score++;
-          var cardsShuff = this.shuffleData(cards)
+          // topScore++;
+          var cardsShuff = this.shuffleData(cards);
         }
+        // else {
+        //   topScore = this.state.topScore
+        //   score = 0;
+        //   cardsShuff = this.shuffleData(cardsData)
+        // }
         // else {
         //   topScore = this.state.topScore
         //   if (score > topScore) {
@@ -38,6 +47,7 @@ class App extends Component {
       }
     }
     this.setState({ cards: cardsShuff, score: score })
+
   }
 
   shuffleData = data => {
@@ -52,20 +62,31 @@ class App extends Component {
     return data;
   };
 
+  checkScore = (score) => {
+    if (score === 12) {
+      this.setState({ winStatus: "You won, Pokedexter!" })
+    }
+  }
+
 
   render() {
     return (
-      <GameWrapper>
-        {this.state.cards.map(card => (
-          <Card
-            id={card.id}
-            key={card.id}
-            image={card.image}
-            name={card.name}
-            handleClick={this.handleClick}
-          />
-        ))}
-      </GameWrapper>
+      <>
+        {/* <Navbar /> */}
+        <Header />
+        <GameWrapper>
+          {this.state.cards.map(card => (
+            <Card
+              id={card.id}
+              key={card.id}
+              image={card.image}
+              name={card.name}
+              handleClick={this.handleClick}
+            />
+          ))}
+        </GameWrapper>
+        <Footer />
+      </>
     );
   }
 }
