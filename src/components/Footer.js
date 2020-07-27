@@ -1,20 +1,24 @@
 import React from "react";
 
-function Footer() {
-    return (
-        <div>
-            <footer>
-                <ul>
-                    <li>
-                        Your Current Score: 
+class Footer extends React.Component {
+
+
+    render() {
+        return (
+            <div>
+                <footer>
+                    <ul>
+                        <li className="score">
+                            Your Current Score: 
                     </li>
-                    <li>
-                        Top Score:
+                        <li>
+                            Top Score:
                     </li>
-                </ul>
-            </footer>
-        </div>
-    )
+                    </ul>
+                </footer>
+            </div>
+        )
+    }
 }
 
 export default Footer;

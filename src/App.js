@@ -74,6 +74,7 @@ class App extends Component {
       <>
         {/* <Navbar /> */}
         <Header />
+        <p>Current Score: {this.state.score}</p>
         <GameWrapper>
           {this.state.cards.map(card => (
             <Card
